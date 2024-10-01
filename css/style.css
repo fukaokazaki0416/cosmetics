@@ -8,6 +8,7 @@
 html{
     font-size: 62.5%;
     scroll-behavior: smooth;
+    scroll-padding: 80px;
     overflow-x: hidden;
 }
 
@@ -135,6 +136,7 @@ html{
 
 }
 /* ---------------- */
+
 img{
     vertical-align: bottom;
     max-width: 100%;
@@ -158,6 +160,8 @@ body{
 ul{
     list-style-type: none;
 }
+
+/* ヘッダー */
 header{
   display: flex;
   justify-content: space-between;
@@ -204,6 +208,8 @@ header nav a::before {
 header nav a:hover{
   text-decoration: none;
 }  
+
+/* メインイメージ */
 .mainimage{
   width: 100%;
   display: flex;
@@ -255,6 +261,7 @@ header nav a:hover{
 .text-border:after {
     right: 0;
 }
+
 .inner{
     max-width: 1120px;
     margin: 0 auto;
@@ -262,6 +269,10 @@ header nav a:hover{
 .inner img:hover{
     cursor: pointer;
 }
+section{
+  margin-top: 100px;
+}
+
 h2:after {
   content: '';
   position: absolute;
@@ -282,14 +293,20 @@ h2,.text{
   font-weight: 400;
   font-style: normal;
 }
-section{
-    margin-top: 100px;
-}
 h2{
-    margin-bottom: 50px;
     font-size: 9rem;
 }
-.sec1 .box-area{
+
+/* section ABOUT */
+.sec1 .text{
+  margin: 0 15px;
+}
+.sec1 .space{
+  margin-top: 15px;
+}
+
+/* section NEWS */
+.sec2 .box-area{
     display: flex;
     justify-content: space-between;
 }
@@ -332,21 +349,22 @@ h2{
     font-size: 1.8rem;
     line-height: 150%;
   }
-  .sec2 .box{
+
+  /* section ITEM */
+  .sec3 .box{
     display: flex;
     align-items: center;
   }
-  .sec2 .box:nth-child(odd){
-    flex-direction: row-reverse;
+  .sec3 .box:nth-child(odd){
+    flex-direction: row-reverse ;
+  }
+  .sec3 .item-img{
     width: 100%;
   }
-  .sec2 .item-img{
-    max-width: 400px;
-  }
-  .sec2 .text{
+  .sec3 .text{
     margin: 0 15px;
   }
-  .sec2 h3{
+  .sec3 h3{
     font-size: 2.4rem;
     margin-bottom: 30px;
   }
@@ -387,37 +405,41 @@ h2{
 .btn{
     margin-top: 50px;
 }
-.sec3 .inner{
+
+/* section LINE */
+.sec4 .inner{
   display: flex;
   justify-content: space-around;
   
 }
-.sec3 .box-area{
+.sec4 .box-area{
 margin-bottom: 50px;
 }
-.sec3 .box{
+.sec4 .box{
   margin-bottom: 50px;
 }
-.sec3 h3{
+.sec4 h3{
   text-align: center;
   margin-bottom: 30px;
   font-size: 2.4rem;
 }
-.sec3 h4{
+.sec4 h4{
   font-size: 2.4rem;
   margin-top: 30px;
   text-align: center;
 }
-.sec3 span{
+.sec4 span{
   width: 1px;
   height: 800px;
   background-color: #3a3a3a;
   margin-top: 100px;
 }
-.sec3 .text{
+.sec4 .text{
   max-width: 300px;
   text-align: center;
 }
+
+/* フッター */
 footer{
   background-color: #ED9E31;
   margin-top: 100px;
@@ -445,35 +467,44 @@ footer p{
 }
 
 @media (max-width:800px){
-  section{
-    margin-top: 50px;
-  }
+ /* メインイメージ */
   .mainimage{
     flex-wrap: wrap;
   }
- .sec2 .btn{
-  margin-top: 30px;
- }
- .sec1 .box-area{
+  .mv .mv-right{
+    margin-top: 20%;
+    padding-left: 10%;
+   }
+   .mv{
+    margin-bottom: 100px;
+   }
+   .imgbox {
+    display: flex;
+    justify-content: flex-end;
+    margin-left: auto;
+   }
+
+   section{
+    margin-top: 50px;
+  }
+
+  /* section NEWS */
+ .sec2 .box-area{
   justify-content: space-around;
   flex-wrap: wrap;
 }
-.sec1 .card{
+.sec2 .card{
   margin-bottom: 30px;
 }
-.mv .mv-right{
-  margin-top: 20%;
-  padding-left: 10%;
- }
 
- .mv{
-  margin-bottom: 100px;
- }
- .imgbox {
-  display: flex;
-  justify-content: flex-end;
-  margin-left: auto;
- }
+/* section ITEM */
+.sec3 .btn{
+  margin-top: 30px;
+}
+/* フッター */
+footer{
+  margin-top: 50px;
+}
 }
 
 @media (max-width:700px){
@@ -484,18 +515,21 @@ footer p{
     width: 70px;
     height: 70px;
   }
-  h2{
-    margin-bottom: 30px;
-  }
-.sec2 .box{
+
+  /* section ITEM */
+.sec3 .box{
   flex-wrap: wrap;
 }
-.sec2 h3{
+.sec3 .box:nth-child(odd){
+  flex-direction: column;
+}
+
+.sec3 h3{
   text-align: center;
   margin-top: 10px;
   margin-bottom: 0;
 }
-.sec2 .item-img{
+.sec3 .item-img{
   max-width: 400px;
   margin: 0 auto;
 }
@@ -579,16 +613,21 @@ header span{
   top: 43%;
 }
 
-.sec3 .inner{
+h2{
+  font-size: 5rem;
+}
+/* section LINE */
+.sec4 .inner{
   display: block;
 }
-.sec3 .box-area{
+.sec4 .box-area{
   text-align: center;
 }
-.sec3 .text{
+.sec4 .text{
   margin: 0 auto;
 }
 
+/* フッター */
 footer ul{
   flex-wrap: wrap;
   text-align: center;
